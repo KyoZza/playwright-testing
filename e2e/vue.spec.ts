@@ -11,5 +11,6 @@ test('about link', async ({ page }) => {
   await page.goto('/')
 
   await page.getByTestId('nav-item-about').click()
+  await expect(page).toHaveURL('/about')
   await expect(page.getByTestId('page-title')).toBeVisible()
 })
