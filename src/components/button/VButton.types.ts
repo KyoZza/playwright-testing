@@ -1,7 +1,8 @@
 export interface ButtonProps {
+  disabled?: boolean
   label?: string
-  variant?: ButtonVariant
   size?: ButtonSize
+  variant?: ButtonVariant
 }
 
 export interface ButtonEmits {
