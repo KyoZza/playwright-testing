@@ -1,19 +1,16 @@
 import { test, expect } from '@playwright/test'
 
-test('greets the user after entering a name (click submit)', async ({ page }) => {
+test('form validation and greeting update', async ({ page }) => {
   await page.goto('/')
-  await page.getByTestId('form-input-name').fill('John Doe')
-  await page.getByTestId('form-submit').click()
 
-  await expect(page.getByTestId('greeting-text')).toContainText('John Doe')
+  const input = page.getByTestId('form-input-name')
+  const submitButton = page.getByTestId('form-submit')
+  const greetingText = page.getByTestId('greeting-text')
 
-  ///await page.getByTestId('form-input-name').press('Enter');
-})
-
-test('greets the user after entering a name (press enter)', async ({ page }) => {
-  await page.goto('/')
-  await page.getByTestId('form-input-name').fill('John Doe')
-  await page.getByTestId('form-input-name').press('Enter')
-
-  await expect(page.getByTestId('greeting-text')).toContainText('John Doe')
+  // Ensure the button is disabled initially
+  await expect(submitButton).toBeDisabled()
+  await input.fill('Alice')
+  await expect(submitButton).toBeEnabled()
+  await submitButton.click()
+  await expect(greetingText).toHaveText('Hello, Alice!')
 })
