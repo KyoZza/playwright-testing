@@ -1,3 +1,3 @@
-import VPageTitle from './VPageTitle.vue'
+import VTitle from './VTitle.vue'
 
-export default VPageTitle
+export default VTitle
