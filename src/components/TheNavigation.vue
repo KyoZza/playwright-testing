@@ -14,7 +14,7 @@ const routes = computed(() => router.getRoutes())
       :key="name"
       :to="path"
       :data-testid="`nav-item-${name?.toString()}`"
-      class="text-gray-600 hover:text-teal-500 font-medium text-lg"
+      class="text-slate-600 hover:text-teal-500 font-medium text-lg"
       active-class="text-teal-600"
     >
       {{ capitalize(name?.toString() || '') }}
