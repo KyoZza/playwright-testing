@@ -7,7 +7,5 @@ import TheNavigation from '@/components/TheNavigation.vue'
     <TheNavigation />
   </header>
 
-  <main>
-    <RouterView />
-  </main>
+  <RouterView />
 </template>
