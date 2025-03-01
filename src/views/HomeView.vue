@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import VPageTitle from '@/components/title'
+import VTitle from '@/components/title'
 </script>
 
 <template>
-  <VPageTitle>Home</VPageTitle>
+  <VTitle title="Home" size="xl" tag="h1" data-testid="page-title" />
 </template>
