@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { ButtonEmits, ButtonProps } from './VButton.types'
 
-const { variant = 'primary', size = 'md' } = defineProps<ButtonProps>()
+const { size = 'md', variant = 'primary', type = 'button' } = defineProps<ButtonProps>()
 defineEmits<ButtonEmits>()
 </script>
 
@@ -22,6 +22,7 @@ defineEmits<ButtonEmits>()
       'text-lg px-4 py-1.5': size === 'lg',
     }"
     :disabled="disabled"
+    :type="type"
     @click="$emit('click')"
   >
     <slot>
