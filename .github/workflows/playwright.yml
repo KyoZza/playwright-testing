@@ -18,13 +18,13 @@ jobs:
 
       - name: Build Project
         run: npm run build
-      - name: Start Server
-        run: npm run preview &
-        env:
-          PORT: 4173 # Adjust the port if necessary
-        # Give the server time to start
-      - name: Wait for Server
-        run: npx wait-on http://localhost:4173
+      # - name: Start Server
+      #   run: npm run preview &
+      #   env:
+      #     PORT: 4173 # Adjust the port if necessary
+      #   # Give the server time to start
+      # - name: Wait for Server
+      #   run: npx wait-on http://localhost:4173
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
